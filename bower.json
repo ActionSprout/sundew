@@ -1,0 +1,25 @@
+{
+  "name": "sundew",
+  "version": "0.0.1",
+  "authors": [
+    "Tim White <tim@actionsprout.com>"
+  ],
+  "description": "ActionSprout Labs custom styles/scripts",
+  "main": "./assets/stylesheets/sundew.scss",
+  "keywords": [
+    "actionsprout",
+    "styles",
+    "scripts",
+    "aslabs"
+  ],
+  "license": "MIT",
+  "homepage": "http://actionsprout.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
