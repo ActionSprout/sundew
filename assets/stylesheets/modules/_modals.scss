@@ -1,0 +1,47 @@
+.ui.dimmer{
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.ui.modal{
+  @include modal-shadow;
+  width: 50%;
+  margin-left: -25%;
+  border-radius: 2px;
+
+  > .header,.actions{
+    border: none;
+    background: none;
+  }
+
+  .header{
+    padding: 2rem;
+    box-shadow: none;
+
+    h3{
+      font-size: 1.43rem;
+      font-weight: 600;
+      // to do: remove font-weight: 500 once we load broader fonts-weights of Open Sans.
+      font-weight: 500;
+      color: $text-color;
+    }
+
+    p{
+      font-size: 1rem;
+      font-weight: 500;
+      color: $light-text-color;
+    }
+  }
+
+  .actions{
+    padding: 2rem;
+  }
+
+  .close.icon{
+    color: $light-text-color;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+
+

@@ -1,0 +1,104 @@
+.ui.button{
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.ui.button.orange{
+  background: $secondary-color;
+
+  &:hover{
+    background: darken($secondary-color, 5%);
+  }
+}
+
+.ui.button.blue{
+  background: $link-color;
+
+  &:hover{
+    background: darken($link-color, 5%);
+  }
+}
+
+.ui.button.pill{
+  border-radius: 10rem;
+}
+
+.ui.button.transparent{
+  box-shadow: 0 0 0 2px $really-light-border-color inset;
+  color: $really-light-text-color;
+  background: none;
+
+  &:hover{
+    box-shadow: 0 0 0 2px $border-color inset;
+    color: $light-text-color;
+  }
+}
+
+.as.shadow.button{
+  display: block;
+  border: 1px solid darken($light-border-color, 10%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+  padding: 1rem .5rem;
+  margin-bottom: 1em;
+  text-align: center;
+  color: $medium-text-color;
+  font-size: 1.1rem;
+  background: #fff;
+  transition: (all, .2s, ease);
+
+  .icon{
+    display: block;
+    text-align: center;
+    font-size: 1.75rem;
+    color: #ccc;
+    width: auto;
+    margin-bottom: .75rem;
+  }
+
+  &:hover{
+    background-color: $link-color;
+    border-color: $link-color;
+    color: #fff;
+
+    .icon{
+      color: #fff;
+    }
+  }
+
+  & + a.more-info{
+    display: block;
+    font-size: .85rem;
+    text-align: center;
+    padding: .5rem;
+    border: 1px solid darken($light-border-color, 10%);
+    border-top: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+    background: #fff;
+
+    &:hover{
+      background: $light-background-color;
+    }
+  }
+}
+
+.canva-design-button{
+  // !important is necessary here, sadly
+  height: auto !important;
+
+  &:before{
+    // Hide the Canva icon
+    display: none;
+  }
+}
+
+.ui.facebook.button{
+  background: $facebook-blue-color;
+
+  a{
+    color: #fff;
+
+    &:hover{
+      color: $light-highlight-color;
+    }
+  }
+}

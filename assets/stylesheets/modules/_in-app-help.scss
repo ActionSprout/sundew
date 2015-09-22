@@ -1,0 +1,67 @@
+div[data-react-class="HelpBubble"]{
+  display: inline;
+}
+
+.icon.help.circle{
+  color: $light-text-color;
+  font-size: 0.9rem;
+  line-height: 0.75em;
+  vertical-align: middle;
+  cursor: help;
+  display: inline-block;
+
+  position: relative;
+  z-index: 1;
+  // @include transition(color, .4s);
+
+  &:hover{
+    color: $link-color;
+  }
+}
+
+.material-link-button{
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: .5rem;
+  text-transform: uppercase;
+  color: darken($link-color, 10%);
+  // transition(color .5s);
+
+  i{
+    margin-left: .25rem;
+  }
+
+  &:hover{
+    color: darken($link-color, 20%);
+  }
+
+  &.disabled{
+    color: $really-light-text-color;
+    cursor: no-drop;
+  }
+}
+
+.popup.in-app-help{
+  min-height: 2rem;
+  padding: 15px 20px;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.45);
+  background: $light-background-color;
+
+  .header{
+    font-size: 1.25rem;
+    margin-bottom: .5em;
+  }
+
+  .content{
+    color: $medium-text-color;
+    font-size: 1.1rem;
+    min-width: 10rem;
+    max-width: 40rem;
+
+    img{
+      display: block;
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+section#header{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2em;
+  background: $medium_background_color;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  color: #fff;
+
+  .ui.floated.right{
+    padding: 0.75em 0;
+
+    > *{
+      float: left;
+    }
+
+    p{
+      margin: 15px 0.25em 0 0;
+    }
+
+    .logo{
+      width: 130px;
+    }
+  }
+
+  .ui.floated.left{
+    min-width: 35%;
+
+    h1 a{
+      font-size: 2rem;
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      img{
+        max-width: 20px;
+        margin-right: 0.25em;
+      }
+
+      span{
+        font-weight: 300;
+      }
+    }
+  }
+
+  form .input{
+    width: 100%
+  }
+
+  .invite-link{
+    padding: 0.85em 0 0.85em 7em;
+
+    a{
+      color: #fff;
+    }
+  }
+}

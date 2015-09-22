@@ -1,0 +1,88 @@
+footer{
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.05);
+  margin-top: 2em;
+  padding: 0.25em 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+
+  .container{
+  margin: 0.75em auto;
+
+    .logo{
+      max-width: 200px;
+      display: block;
+      margin-top: 5px;
+    }
+
+    .left{
+      width: 50%;
+      float: left;
+      padding-right: 0.5em;
+
+      > *{
+        text-align: left;
+        float: left;
+
+        &.logo{
+          float: none;
+        }
+      }
+    }
+
+    .right{
+      width: 50%;
+      float: right;
+      padding-left: 0.5em;
+      margin-top: 3px;
+
+      > *{
+        text-align: right;
+        float: right;
+      }
+
+      .more{
+        font-size: 0.9em;
+        margin-right: 0.75em;
+        line-height: 2.25rem;
+      }
+    }
+
+    .ui.button.tiny{
+      background: $primary-color;
+      color: #fff;
+
+      &:hover{
+        background: darken($primary-color, 5%);
+        transition: background-color 0.3s ease;
+      }
+    }
+  }
+}
+
+@media only screen
+and (max-width: 767px) {
+  footer{
+    position: static;
+  }
+}
+
+@media only screen
+and (max-width: 568px) {
+  footer .right{
+
+    .more{
+      display: none;
+    }
+  }
+}
+
+@media only screen
+and (max-width: 420px ) {
+  footer .container .right{
+    margin-top: 0;
+  }
+}
+

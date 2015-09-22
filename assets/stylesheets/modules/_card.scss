@@ -1,0 +1,375 @@
+/* TO DO: Delete commented code later */
+// .card-grid{
+//   position: relative;
+//   margin: 0px -10px 20px;
+
+//   .tile{
+//     padding: 10px;
+//     width: 50%;
+
+//     @include max-width(1150px) {
+//       width: 100%;
+//     }
+
+//     @include min-width(1600px) {
+//       width: 33%;
+//     }
+//   }
+// }
+
+.ui.cards{
+  display: block;
+}
+
+.ui.cards .ui.card, .ui.card{
+  @include card-shadow;
+  border-radius: 3px;
+  border: 1px solid $border-color;
+
+  /* styles added for cottonwood */
+  float: left;
+  margin-right: 3%;
+  width: 30%;
+  display: block;
+
+  &:nth-child(3n+3){
+    margin-right: 0;
+  }
+  /* end styles added for cottonwood */
+
+  header{
+    border-bottom: 1px solid rgb(230, 230, 230);
+    padding: 1rem 1.5rem;
+    position: relative;
+  }
+
+  &:last-child{
+    margin-right: 0;
+  }
+
+  > .content, .dimmable > .content{
+    padding: 1.5em;
+    color: $light-text-color;
+    margin-bottom: 0;
+  }
+
+  .ui.label.corner{
+    overflow: hidden;
+    margin: -1px -1px 0 0;
+  }
+
+  .image img, .ui.basic.buttons{
+    border-radius: 0;
+  }
+
+  .ui.image.kinda.tiny{
+    width: 30px;
+    border: 1px solid $really-light-border-color;
+  }
+
+  // .nudge-arrow{
+  //   @include arrow(15px, rgba(0, 0, 0, 0.85), top);
+  //   position: absolute;
+  //   right: 22%;
+  // }
+
+  .ui.items{
+    > .item{
+      margin-bottom: 1.5em;
+      position: relative;
+      z-index: 8;
+
+      &:only-child{
+        margin-bottom: 0;
+      }
+    }
+
+    > .item > .content,{
+      font-size: 0.9rem;
+
+      .title a{
+        color: $light-text-color;
+
+        &:hover{
+          transition: (text-decoration, .3s);
+          text-decoration: underline;
+        }
+      }
+
+      .meta a{
+        color: $really-light-text-color;
+
+        &:hover{
+          transition: (text-decoration, .3s);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  // .dimmable > .ui.items.content{
+  //   margin-top: 0;
+  // }
+
+  // .ui.segment{
+  //   box-shadow: none;
+  //   padding: 0;
+
+  //   > h4, > p{
+  //     margin-bottom: 0.35em;
+  //   }
+
+  //   span.link{
+  //     color: $really-light-text-color;
+  //     text-transform: uppercase;
+  //     font-weight: 700;
+  //     font-size: 0.9rem;
+  //   }
+  // }
+
+  // .meta.content, .actions {
+  //   border-top: 1px solid $light-border-color;
+  //   color: $really-light-text-color;
+
+  //   span{
+  //     margin-right: 4%;
+  //   }
+  // }
+
+  // .actions.content{
+  //   padding: 0.75em 1em;
+
+  //   > div.item{
+  //     width: 50%;
+  //     float: right;
+
+  //     a{
+  //       display: block;
+  //     }
+  //   }
+  // }
+}
+
+
+.ui.card > :last-child, .ui.cards > .card > :last-child{
+  // We have to use !important here because Semantic does :/
+  border-radius: 0 !important;
+}
+
+.card .image.blurred{
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $really-light-border-color;
+  border-width: 1px 0;
+  margin-bottom: -1px;
+
+  img.primary{
+    position: relative;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    z-index: 2;
+    border-radius: 0;
+    max-height: 300px;
+    display: block;
+  }
+
+  img.background{
+    position: absolute;
+    top: -25%;
+    right: -10%;
+    bottom: 0;
+    left: -10%;
+    // @include position(absolute, -25% -10% null -10%);
+    filter: blur(10px);
+    // @include prefixer(filter, blur(10px), webkit moz spec);
+
+    width: 120%;
+  }
+}
+
+// .ui.card.button{
+//   min-height: 22rem;
+
+//   a{
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     left: 0;
+//     bottom: 0;
+
+//     color: #ccc;
+//     font-size: 1.75rem;
+//     font-weight: 300;
+//     transition: all .3s ease;
+
+//     i{
+//       display: block;
+//       margin-bottom: 2rem;
+//       text-align: center;
+//       margin-top: 40%;
+//       font-size: 4rem;
+//       width: 100%;
+//     }
+
+//     &:hover{
+//       color: #fff;
+//       background: $link-color;
+//     }
+//   }
+// }
+
+// /* ---Performance Button Styles--- */
+// .ui.cards .ui.card, .ui.card{
+//   &.performance{
+//     &.poor{
+//       .actions .ui.button{
+//         @extend .ui.button.transparent;
+//       }
+//     }
+
+//     &.decent{
+//       .actions .ui.button{
+//         background-color: $really-light-text-color;
+//         color: #fff;
+
+//         &:hover{
+//           background-color: darken($really-light-text-color, 5%);
+//         }
+//       }
+//     }
+
+//     &.good, &.awesome{
+//       .actions .ui.button{
+//         background-color: $primary-color;
+//         color: #fff;
+
+//         &:hover{
+//           background-color: lighten($primary-color, 5%);
+//         }
+//       }
+//     }
+//   }
+// }
+
+// /* ---Performance Label Styles--- */
+
+// .ui.cards .ui.card, .ui.card{
+//   .ui.corner.label{
+//     z-index: 1002;
+//     color: #fff;
+//     min-height: 6.25rem;
+//     min-width: 6.25rem;
+
+//     .icon{
+//       font-size: 1rem;
+//       left: 2.25rem;
+//       top: 0.35rem;
+//     }
+//   }
+
+//   &.awesome .ui.corner.label .icon{
+//     font-size: 2.25rem;
+//     left: 1.75rem;
+//     top: 0.15rem;
+//   }
+
+//   &.awesome .label:after{
+//     border-right-color: $primary-color;
+//     border-width: 0 4.75rem 4.75rem 0;
+//   }
+
+//   &.good .label:after{
+//     border-right-color: $primary-color;
+//   }
+
+//   &.decent .label:after{
+//     border-right-color: $really-light-text-color;
+//   }
+
+//   &.poor{
+//     .icon{
+//       color: $really-light-text-color;
+//     }
+//   }
+
+//   &.poor .label:after{
+//     border-right-color: $really-light-border-color;
+//   }
+// }
+
+// .as.inspire.cards{
+//   @include clearfix;
+
+//   .ui.card{
+//     width: 45%;
+//     margin-right: 7%;
+//     margin-bottom: 5%;
+//     margin-top: 0;
+//     float: left;
+//     vertical-align: top;
+
+//     &:nth-child(even){
+//       margin-right: 0;
+//     }
+//   }
+// }
+
+// .teammate.fluid.card{
+//   max-width: 300px;
+
+//   h5{
+//     margin-bottom: .25rem;
+//   }
+
+//   .dimmer{
+//     display: block;
+//   }
+
+//   &:hover{
+//     .dimmer{
+//       transition: (opacity, .5s);
+//       // @include transition(opacity, .5s);
+//       opacity: 1;
+//     }
+//   }
+
+//   .square-thumbnail{
+//     // Magic number == the width of a card at >= 1200 pixels of browser width
+//     @include square-thumbnail(254px);
+//   }
+// }
+
+// .ui.card{
+//   .image.faded{
+//     img{
+//       opacity: .6;
+//       -webkit-filter: grayscale(100%);
+//     }
+//   }
+// }
+
+// .ui.card.inspire-post{
+//   .ui.dimmer{
+//     display: block;
+//     opacity: 0;
+//     z-index: 7;
+//     transition: (opacity .5s ease);
+//     // @include transition(opacity .5s ease);
+//   }
+
+//   &:hover{
+//     .ui.dimmer{
+//       opacity: 1;
+//     }
+//   }
+// }
+
+// .ui.waiting{
+//   i{
+//     font-size: 1.5em;
+//     line-height: 0.9em;
+//     vertical-align: middle;
+//   }
+// }

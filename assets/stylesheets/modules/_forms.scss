@@ -1,0 +1,59 @@
+// Form styles go here
+.ui.input{
+  margin-bottom: 1em;
+}
+
+.ui.input + .button{
+  margin-left: 1em;
+  line-height: 1.2em;
+}
+
+.ui.input.icon.left{
+  i{
+    left: 0;
+  }
+
+  input{
+    padding-left: 3em;
+  }
+}
+
+.ui.button{
+  vertical-align: top;
+}
+
+label{
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: 0.85em;
+  color: $medium-text-color;
+}
+
+#share{
+  form div.ui.input{
+    min-width: 65%;
+  }
+}
+
+#access{
+  form div.ui.input{
+    min-width: 45%;
+  }
+}
+
+section#header{
+  .ui.input{
+    margin-bottom: 0;
+  }
+}
+
+.ui.form{
+  .field:last-child{
+    margin-bottom: 0.5em;
+  }
+
+  .field label{
+    font-weight: 300;
+    color: $light-text-color;
+  }
+}
