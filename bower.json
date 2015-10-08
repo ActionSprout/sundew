@@ -5,7 +5,10 @@
     "Tim White <tim@actionsprout.com>"
   ],
   "description": "ActionSprout Labs custom styles/scripts",
-  "main": "./assets/stylesheets/sundew.scss",
+  "main": [
+    "./assets/stylesheets/sundew.scss",
+    "./assets/javascripts/as-labs-footer.jsx"
+  ],
   "keywords": [
     "actionsprout",
     "styles",
