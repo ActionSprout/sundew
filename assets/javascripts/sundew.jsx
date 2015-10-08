@@ -21,9 +21,9 @@ window.AsLabs = {
       return <section id="header">
         <section className="container">
           <div className="ui floated left">
-            <a href="/">
-              <img src={this.props.logo_src} />
-            </a>
+            <h1>
+            {this.props.app_name || "ActionSprout Labs"}
+            </h1>
           </div>
           <div className="ui floated right">
             <p>Powered by</p>
