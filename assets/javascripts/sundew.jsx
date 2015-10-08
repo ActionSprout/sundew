@@ -22,7 +22,7 @@ window.AsLabs = {
         <section className="container">
           <div className="ui floated left">
             <h1>
-            {this.props.app_name || "ActionSprout Labs"}
+              <a href="/">{this.props.app_name || "ActionSprout Labs"}</a>
             </h1>
           </div>
           <div className="ui floated right">
