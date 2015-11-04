@@ -1,0 +1,27 @@
+{
+  "name": "sundew",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "normalize.css": "^3.0.3",
+    "react": "^0.14.2",
+    "react-addons-css-transition-group": "^0.14.2",
+    "react-dom": "^0.14.2",
+    "react-toolbox": "^0.11.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timwhite47/sundew.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timwhite47/sundew/issues"
+  },
+  "homepage": "https://github.com/timwhite47/sundew#readme"
+}
