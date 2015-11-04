@@ -7,7 +7,7 @@
   "description": "ActionSprout Labs custom styles/scripts",
   "main": [
     "./assets/stylesheets/sundew.scss",
-    "./assets/javascripts/sundew.jsx"
+    "./assets/javascripts/dist/sundew.js"
   ],
   "keywords": [
     "actionsprout",

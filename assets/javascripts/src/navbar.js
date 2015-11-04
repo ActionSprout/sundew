@@ -1,4 +1,4 @@
-window.AsLabs = {
+module.exports = {
   Footer: React.createClass({
     render: function () {
       return <footer id="footer">
@@ -40,7 +40,6 @@ window.AsLabs = {
           </div>
         </section>
       </section>
-
     }
   })
 };
