@@ -8,7 +8,7 @@ module.exports = React.createClass({
   getDefaultProps: function() {
     return {
       label: 'Login with Facebook',
-      scope: 'public_profile',
+      scope: 'public_profile,email',
       redirect_url: '/'
     };
   },
@@ -19,7 +19,7 @@ module.exports = React.createClass({
     redirect_url: React.PropTypes.string
   },
   handleClick: function () {
-    FB.login(this.props.onLogin, {scope: this.props.scope})
+    FB.login(this.onLogin, {scope: this.props.scope})
   },
   onLogin: function (response) {
     var component = this;
