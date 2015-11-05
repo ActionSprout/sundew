@@ -20,7 +20,7 @@ module.exports = function(grunt) {
     browserify: {
       dist: {
         files: {
-          'dist/sundew.js': ['dist/*.js']
+          'dist/sundew.js': ['dist/index.js']
         }
       }
     }
