@@ -54,7 +54,7 @@ module.exports = React.createClass({
   },
   buttonClassName: function () {
     var str = "ui button facebook";
-    if(this.state.loading) str += 'loading';
+    if(this.state.loading) str += ' loading';
 
     return str
   },
