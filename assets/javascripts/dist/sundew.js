@@ -95,11 +95,64 @@ var _header = require('./header.js');
 
 var _header2 = _interopRequireDefault(_header);
 
+var _login_button = require('./login_button.js');
+
+var _login_button2 = _interopRequireDefault(_login_button);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.AsLabs = {
   Header: _header2.default,
-  Footer: _footer2.default
+  Footer: _footer2.default,
+  Login: _login_button2.default
 };
 
-},{"./footer.js":1,"./header.js":2}]},{},[3]);
+},{"./footer.js":1,"./header.js":2,"./login_button.js":4}],4:[function(require,module,exports){
+'use strict';
+
+module.exports = React.createClass({
+  getInitialState: function getInitialState() {
+    return {
+      loading: typeof FB == 'undefined'
+    };
+  },
+  getDefaultProps: function getDefaultProps() {
+    return {
+      label: 'Login with Facebook',
+      handleClick: this.handleClick,
+      onLogin: this.onLogin,
+      scope: 'public_profile'
+    };
+  },
+  propTypes: {
+    label: React.PropTypes.string,
+    scope: React.PropTypes.string,
+    handleClick: React.PropTypes.func
+  },
+  handleClick: function handleClick() {
+    FB.login(this.props.onLogin, { scope: this.props.scope });
+  },
+  onLogin: function onLogin(response) {
+    console.log('You Clicked the button!!!', response);
+  },
+  componentDidMount: function componentDidMount() {
+    var component = this;
+
+    if (this.state.loading) {
+      // HACK to find out how to if FB is ready.
+      $('#fb-root').on('ready', function () {
+        component.setState({ loading: false });
+      });
+    }
+  },
+  render: function render() {
+    return React.createElement(
+      'button',
+      { className: 'ui button facebook', onClick: this.props.handleClick },
+      React.createElement('i', { className: 'ui icon fa fa-facebook' }),
+      this.props.label
+    );
+  }
+});
+
+},{}]},{},[3]);
