@@ -8,22 +8,32 @@ module.exports = React.createClass({
   getDefaultProps: function() {
     return {
       label: 'Login with Facebook',
-      handleClick: this.handleClick,
       onLogin: this.onLogin,
-      scope: 'public_profile'
+      scope: 'public_profile',
+      redirect_url: '/'
     };
   },
   propTypes: {
     label: React.PropTypes.string,
     scope: React.PropTypes.string,
-    handleClick: React.PropTypes.func,
-    onLogin: React.PropTypes.func
+    onLogin: React.PropTypes.func,
+    redirect_url: React.PropTypes.string
   },
   handleClick: function () {
     FB.login(this.props.onLogin, {scope: this.props.scope})
   },
   onLogin: function (response) {
-    console.log('You Clicked the button!!!', response)
+    var component = this;
+
+    if(this.props.onLogin) {
+      this.props.onLogin(response)
+    } else {
+      if(!response.authResponse) return alert("You did not login correctly.");
+
+      $.post('/auth/facebook/callback', function (user) {
+        window.location = component.props.redirect_url;
+      })
+    }
   },
   componentDidMount: function () {
     var component = this;
@@ -42,7 +52,7 @@ module.exports = React.createClass({
     return str
   },
   render: function () {
-    return <button className={this.buttonClassName()} onClick={this.props.handleClick}>
+    return <button className={this.buttonClassName()} onClick={this.handleClick}>
         <i className="ui icon fa fa-facebook"></i>
 
         {this.props.label}
