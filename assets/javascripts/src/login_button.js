@@ -1,4 +1,5 @@
 module.exports = React.createClass({
+  displayName: "AsLabs::LoginButton",
   getInitialState: function () {
     return {
       loading: (typeof(FB) == 'undefined')
@@ -15,7 +16,8 @@ module.exports = React.createClass({
   propTypes: {
     label: React.PropTypes.string,
     scope: React.PropTypes.string,
-    handleClick: React.PropTypes.func
+    handleClick: React.PropTypes.func,
+    onLogin: React.PropTypes.func
   },
   handleClick: function () {
     FB.login(this.props.onLogin, {scope: this.props.scope})
@@ -33,8 +35,14 @@ module.exports = React.createClass({
       })
     }
   },
+  buttonClassName: function () {
+    var str = "ui button facebook";
+    if(this.state.loading) str += 'loading';
+
+    return str
+  },
   render: function () {
-    return <button className="ui button facebook" onClick={this.props.handleClick}>
+    return <button className={this.buttonClassName()} onClick={this.props.handleClick}>
         <i className="ui icon fa fa-facebook"></i>
 
         {this.props.label}

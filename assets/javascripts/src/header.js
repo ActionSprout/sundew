@@ -1,4 +1,5 @@
 module.exports = React.createClass({
+  displayName: "AsLabs::Header",
   logo: function () {
     return <img src={this.props.app_logo}/>
   },

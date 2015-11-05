@@ -1,4 +1,5 @@
 module.exports = React.createClass({
+  displayName: "AsLabs::Footer",
   render: function () {
     return <footer id="footer">
       <section className="container">
