@@ -132,6 +132,7 @@ module.exports = React.createClass({
     onLogin: React.PropTypes.func,
     redirect_url: React.PropTypes.string
   },
+
   handleClick: function handleClick() {
     FB.login(this.onLogin, { scope: this.props.scope });
   },
@@ -148,14 +149,23 @@ module.exports = React.createClass({
       });
     }
   },
+  fbInitialized: function fbInitialized() {
+    var component = this;
+
+    FB.getLoginStatus(function () {
+      component.setState({ loading: false });
+    });
+  },
   componentDidMount: function componentDidMount() {
     var component = this;
 
     if (this.state.loading) {
       // HACK to find out how to if FB is ready.
       $('#fb-root').on('ready', function () {
-        component.setState({ loading: false });
+        component.fbInitialized();
       });
+    } else {
+      component.fbInitialized();
     }
   },
   buttonClassName: function buttonClassName() {

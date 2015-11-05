@@ -18,6 +18,7 @@ module.exports = React.createClass({
     onLogin: React.PropTypes.func,
     redirect_url: React.PropTypes.string
   },
+
   handleClick: function () {
     FB.login(this.onLogin, {scope: this.props.scope})
   },
@@ -34,14 +35,21 @@ module.exports = React.createClass({
       })
     }
   },
+  fbInitialized: function () {
+    var component = this;
+
+    FB.getLoginStatus(function() { component.setState({loading: false}) });
+  },
   componentDidMount: function () {
     var component = this;
 
     if(this.state.loading) {
       // HACK to find out how to if FB is ready.
       $('#fb-root').on('ready', function () {
-        component.setState({loading: false})
+        component.fbInitialized()
       })
+    } else {
+      component.fbInitialized()
     }
   },
   buttonClassName: function () {
