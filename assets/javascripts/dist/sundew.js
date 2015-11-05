@@ -144,7 +144,7 @@ module.exports = React.createClass({
     } else {
       if (!response.authResponse) return alert("You did not login correctly.");
 
-      $.post('/auth/facebook/callback', function (user) {
+      $.get('/auth/facebook/callback', function (user) {
         window.location = component.props.redirect_url;
       });
     }
