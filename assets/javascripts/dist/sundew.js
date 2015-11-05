@@ -122,7 +122,6 @@ module.exports = React.createClass({
   getDefaultProps: function getDefaultProps() {
     return {
       label: 'Login with Facebook',
-      onLogin: this.onLogin,
       scope: 'public_profile',
       redirect_url: '/'
     };
