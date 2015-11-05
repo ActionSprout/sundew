@@ -1,6 +1,6 @@
 "use strict";
 
-modules.exports = React.createClass({
+module.exports = React.createClass({
   logo: function logo() {
     return React.createElement("img", { src: this.props.app_logo });
   },

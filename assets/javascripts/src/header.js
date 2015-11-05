@@ -1,4 +1,4 @@
-modules.exports = React.createClass({
+module.exports = React.createClass({
   logo: function () {
     return <img src={this.props.app_logo}/>
   },

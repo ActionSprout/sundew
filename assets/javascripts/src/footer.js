@@ -1,4 +1,4 @@
-modules.exports = React.createClass({
+module.exports = React.createClass({
   render: function () {
     return <footer id="footer">
       <section className="container">

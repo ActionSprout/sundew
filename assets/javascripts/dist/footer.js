@@ -1,6 +1,6 @@
 "use strict";
 
-modules.exports = React.createClass({
+module.exports = React.createClass({
   render: function render() {
     return React.createElement(
       "footer",
