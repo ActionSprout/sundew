@@ -1,6 +1,7 @@
 "use strict";
 
 module.exports = React.createClass({
+  displayName: "AsLabs::Footer",
   render: function render() {
     return React.createElement(
       "footer",
