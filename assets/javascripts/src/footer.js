@@ -1,4 +1,4 @@
-module.exports = React.createClass({
+window.Footer = React.createClass({
   displayName: "AsLabs::Footer",
   render: function () {
     return <footer id="footer">
@@ -15,4 +15,4 @@ module.exports = React.createClass({
       </section>
     </footer>
   }
-})
+});

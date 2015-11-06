@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = React.createClass({
+window.LoginButton = React.createClass({
   displayName: "AsLabs::LoginButton",
   getInitialState: function getInitialState() {
     return {
