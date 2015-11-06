@@ -1,5 +1,5 @@
 require('react');
+require('react-semantify');
 require('./header');
 require('./footer');
-require('./button');
 require('./login_button');
