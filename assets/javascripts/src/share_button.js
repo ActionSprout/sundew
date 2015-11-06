@@ -18,9 +18,9 @@ window.AsLabs.ShareButton = React.createClass({
   },
   propTypes: {
     label: React.PropTypes.string,
-    scope: React.PropTypes.string,
+    className: React.PropTypes.string,
     onShare: React.PropTypes.func,
-    redirect_url: React.PropTypes.string
+    href: React.PropTypes.string
   },
   onShare: function (response) {
     if(this.props.onShare) {
