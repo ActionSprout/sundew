@@ -1,3 +1,4 @@
+require('react');
 require('./header');
 require('./footer');
 require('./button');
