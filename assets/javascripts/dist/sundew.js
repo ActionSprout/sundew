@@ -1,6 +1,30 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 "use strict";
 
+var Image = AsLabs.Image;
+
+window.AsLabs.FBAvatar = React.createClass({
+  displayName: "AsLabs::FBAvatar",
+  propTypes: {
+    fbid: React.PropTypes.string.isRequired,
+    size: React.PropTypes.string
+  },
+  getDefaultProps: function getDefaultProps() {
+    return {
+      size: 'large'
+    };
+  },
+  avatarUrl: function avatarUrl() {
+    return "http://graph.facebook.com/" + this.props.fbid + '/picture?type=' + this.props.size;
+  },
+  render: function render() {
+    return React.createElement(Image, { className: "avatar", src: this.avatarUrl() });
+  }
+});
+
+},{}],2:[function(require,module,exports){
+"use strict";
+
 window.AsLabs.AppFooter = React.createClass({
   displayName: "AsLabs::AppFooter",
   render: function render() {
@@ -38,7 +62,7 @@ window.AsLabs.AppFooter = React.createClass({
   }
 });
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 "use strict";
 
 window.AsLabs.AppHeader = React.createClass({
@@ -86,16 +110,17 @@ window.AsLabs.AppHeader = React.createClass({
   }
 });
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 'use strict';
 
 window.AsLabs = require('react-semantify/lib/index_browser.js');
 require('./header');
 require('./footer');
+require('./avatar');
 require('./share_button');
 require('./login_button');
 
-},{"./footer":1,"./header":2,"./login_button":4,"./share_button":5,"react-semantify/lib/index_browser.js":36}],4:[function(require,module,exports){
+},{"./avatar":1,"./footer":2,"./header":3,"./login_button":5,"./share_button":6,"react-semantify/lib/index_browser.js":37}],5:[function(require,module,exports){
 'use strict';
 
 window.AsLabs.LoginButton = React.createClass({
@@ -170,7 +195,7 @@ window.AsLabs.LoginButton = React.createClass({
   }
 });
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 
 var Button = window.AsLabs.Button;
@@ -240,7 +265,7 @@ window.AsLabs.ShareButton = React.createClass({
   }
 });
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -274,7 +299,7 @@ module.exports = function (React) {
 
   return Breadcrumb;
 };
-},{"../mixins/classGenerator.js":37}],7:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],8:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -308,7 +333,7 @@ module.exports = function (React) {
 
   return Form;
 };
-},{"../mixins/classGenerator.js":37}],8:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],9:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -342,7 +367,7 @@ module.exports = function (React) {
 
   return Grid;
 };
-},{"../mixins/classGenerator.js":37}],9:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],10:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -376,7 +401,7 @@ module.exports = function (React) {
 
   return Menu;
 };
-},{"../mixins/classGenerator.js":37}],10:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],11:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -410,7 +435,7 @@ module.exports = function (React) {
 
   return Message;
 };
-},{"../mixins/classGenerator.js":37}],11:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],12:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -444,7 +469,7 @@ module.exports = function (React) {
 
   return Table;
 };
-},{"../mixins/classGenerator.js":37}],12:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],13:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -478,7 +503,7 @@ module.exports = function (React) {
 
   return Column;
 };
-},{"../mixins/classGenerator.js":37}],13:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],14:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -521,7 +546,7 @@ module.exports = function (React) {
 
   return Content;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/stateSelector.js":39}],14:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/stateSelector.js":40}],15:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -555,7 +580,7 @@ module.exports = function (React) {
 
   return Field;
 };
-},{"../mixins/classGenerator.js":37}],15:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],16:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -589,7 +614,7 @@ module.exports = function (React) {
 
   return Fields;
 };
-},{"../mixins/classGenerator.js":37}],16:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],17:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -623,7 +648,7 @@ module.exports = function (React) {
 
   return Row;
 };
-},{"../mixins/classGenerator.js":37}],17:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],18:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -664,7 +689,7 @@ module.exports = function (React) {
 
   return Section;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/colorSelector.js":38,"../mixins/typeSelector.js":40}],18:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/colorSelector.js":39,"../mixins/typeSelector.js":41}],19:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -698,7 +723,7 @@ module.exports = function (React) {
 
   return Text;
 };
-},{"../mixins/classGenerator.js":37}],19:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],20:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -741,7 +766,7 @@ module.exports = function (React) {
 
   return Title;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/stateSelector.js":39}],20:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/stateSelector.js":40}],21:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -836,7 +861,7 @@ module.exports = function (React) {
 
   return Unit;
 };
-},{"classnames":62}],21:[function(require,module,exports){
+},{"classnames":63}],22:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -883,7 +908,7 @@ module.exports = function (React) {
 
   return Button;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/colorSelector.js":38,"../mixins/stateSelector.js":39}],22:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/colorSelector.js":39,"../mixins/stateSelector.js":40}],23:[function(require,module,exports){
 "use strict";
 module.exports = function (React) {
 
@@ -907,7 +932,7 @@ module.exports = function (React) {
 
   return Divider;
 };
-},{"../mixins/classGenerator.js":37}],23:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],24:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -943,7 +968,7 @@ module.exports = function (React) {
 
   return Flag;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37}],24:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38}],25:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -987,7 +1012,7 @@ module.exports = function (React) {
 
   return Header;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/colorSelector.js":38,"../mixins/stateSelector.js":39,"../mixins/typeSelector.js":40}],25:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/colorSelector.js":39,"../mixins/stateSelector.js":40,"../mixins/typeSelector.js":41}],26:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -1026,7 +1051,7 @@ module.exports = function (React) {
 
   return Icon;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/colorSelector.js":38,"../mixins/stateSelector.js":39}],26:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/colorSelector.js":39,"../mixins/stateSelector.js":40}],27:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -1068,7 +1093,7 @@ module.exports = function (React) {
 
   return Image;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/stateSelector.js":39}],27:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/stateSelector.js":40}],28:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -1126,7 +1151,7 @@ module.exports = function (React) {
 
   return Input;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/stateSelector.js":39}],28:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/stateSelector.js":40}],29:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -1168,7 +1193,7 @@ module.exports = function (React) {
 
   return Label;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/colorSelector.js":38,"../mixins/typeSelector.js":40}],29:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/colorSelector.js":39,"../mixins/typeSelector.js":41}],30:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -1202,7 +1227,7 @@ module.exports = function (React) {
 
   return List;
 };
-},{"../mixins/classGenerator.js":37}],30:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],31:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -1243,7 +1268,7 @@ module.exports = function (React) {
 
   return Loader;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/stateSelector.js":39}],31:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/stateSelector.js":40}],32:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -1277,7 +1302,7 @@ module.exports = function (React) {
 
   return Rail;
 };
-},{"../mixins/classGenerator.js":37}],32:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],33:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -1317,7 +1342,7 @@ module.exports = function (React) {
 
   return Reveal;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/stateSelector.js":39}],33:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/stateSelector.js":40}],34:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -1356,7 +1381,7 @@ module.exports = function (React) {
 
   return Segment;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/colorSelector.js":38,"../mixins/stateSelector.js":39}],34:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/colorSelector.js":39,"../mixins/stateSelector.js":40}],35:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -1398,7 +1423,7 @@ module.exports = function (React) {
 
   return Step;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/stateSelector.js":39}],35:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/stateSelector.js":40}],36:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -1432,7 +1457,7 @@ module.exports = function (React) {
 
   return Steps;
 };
-},{"../mixins/classGenerator.js":37}],36:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],37:[function(require,module,exports){
 (function (global){
 "use strict";
 var React = global.React;
@@ -1499,7 +1524,7 @@ module.exports = global.Semantify = {
   Statistic: require("./views/statistic.js")(React)
 };
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./collections/breadcrumb.js":6,"./collections/form.js":7,"./collections/grid.js":8,"./collections/menu.js":9,"./collections/message.js":10,"./collections/table.js":11,"./commons/column.js":12,"./commons/content.js":13,"./commons/field.js":14,"./commons/fields.js":15,"./commons/row.js":16,"./commons/section.js":17,"./commons/text.js":18,"./commons/title.js":19,"./elements/button.js":21,"./elements/divider.js":22,"./elements/flag.js":23,"./elements/header.js":24,"./elements/icon.js":25,"./elements/image.js":26,"./elements/input.js":27,"./elements/label.js":28,"./elements/list.js":29,"./elements/loader.js":30,"./elements/rail.js":31,"./elements/reveal.js":32,"./elements/segment.js":33,"./elements/step.js":34,"./elements/steps.js":35,"./modules/accordion.js":41,"./modules/checkbox.js":42,"./modules/dimmer.js":43,"./modules/dropdown.js":44,"./modules/modal.js":45,"./modules/popup.js":46,"./modules/progress.js":47,"./modules/rating.js":48,"./modules/search.js":49,"./modules/shape.js":50,"./modules/sidebar.js":51,"./modules/sticky.js":52,"./modules/tab.js":53,"./views/advertisement.js":54,"./views/card.js":55,"./views/comment.js":56,"./views/comments.js":57,"./views/feed.js":58,"./views/item.js":59,"./views/items.js":60,"./views/statistic.js":61}],37:[function(require,module,exports){
+},{"./collections/breadcrumb.js":7,"./collections/form.js":8,"./collections/grid.js":9,"./collections/menu.js":10,"./collections/message.js":11,"./collections/table.js":12,"./commons/column.js":13,"./commons/content.js":14,"./commons/field.js":15,"./commons/fields.js":16,"./commons/row.js":17,"./commons/section.js":18,"./commons/text.js":19,"./commons/title.js":20,"./elements/button.js":22,"./elements/divider.js":23,"./elements/flag.js":24,"./elements/header.js":25,"./elements/icon.js":26,"./elements/image.js":27,"./elements/input.js":28,"./elements/label.js":29,"./elements/list.js":30,"./elements/loader.js":31,"./elements/rail.js":32,"./elements/reveal.js":33,"./elements/segment.js":34,"./elements/step.js":35,"./elements/steps.js":36,"./modules/accordion.js":42,"./modules/checkbox.js":43,"./modules/dimmer.js":44,"./modules/dropdown.js":45,"./modules/modal.js":46,"./modules/popup.js":47,"./modules/progress.js":48,"./modules/rating.js":49,"./modules/search.js":50,"./modules/shape.js":51,"./modules/sidebar.js":52,"./modules/sticky.js":53,"./modules/tab.js":54,"./views/advertisement.js":55,"./views/card.js":56,"./views/comment.js":57,"./views/comments.js":58,"./views/feed.js":59,"./views/item.js":60,"./views/items.js":61,"./views/statistic.js":62}],38:[function(require,module,exports){
 "use strict";
 module.exports = function (React) {
 
@@ -1532,7 +1557,7 @@ module.exports = function (React) {
 
   return ClassGenerator;
 };
-},{"classnames":62}],38:[function(require,module,exports){
+},{"classnames":63}],39:[function(require,module,exports){
 "use strict";
 module.exports = function (React) {
 
@@ -1560,7 +1585,7 @@ module.exports = function (React) {
 
   return ColorSelector;
 };
-},{}],39:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 "use strict";
 module.exports = function (React) {
 
@@ -1671,7 +1696,7 @@ module.exports = function (React) {
 
   return StateSelector;
 };
-},{}],40:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 "use strict";
 module.exports = function (React) {
 
@@ -1697,7 +1722,7 @@ module.exports = function (React) {
 
   return TypeSelector;
 };
-},{}],41:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 "use strict";
 module.exports = function (React) {
 
@@ -1735,7 +1760,7 @@ module.exports = function (React) {
 
   return Accordion;
 };
-},{"../mixins/classGenerator.js":37}],42:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],43:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -1794,7 +1819,7 @@ module.exports = function (React) {
 
   return Checkbox;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/stateSelector.js":39}],43:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/stateSelector.js":40}],44:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -1851,7 +1876,7 @@ module.exports = function (React) {
 
   return Dimmer;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/stateSelector.js":39}],44:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/stateSelector.js":40}],45:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -1916,7 +1941,7 @@ module.exports = function (React) {
 
   return Dropdown;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/stateSelector.js":39}],45:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/stateSelector.js":40}],46:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -1973,7 +1998,7 @@ module.exports = function (React) {
 
   return Modal;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/stateSelector.js":39}],46:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/stateSelector.js":40}],47:[function(require,module,exports){
 "use strict";
 module.exports = function (React) {
 
@@ -1997,7 +2022,7 @@ module.exports = function (React) {
 
   return Popup;
 };
-},{"../mixins/classGenerator.js":37}],47:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],48:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -2066,7 +2091,7 @@ module.exports = function (React) {
 
   return Progress;
 };
-},{"../mixins/classGenerator.js":37,"../mixins/stateSelector.js":39}],48:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38,"../mixins/stateSelector.js":40}],49:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -2119,7 +2144,7 @@ module.exports = function (React) {
 
   return Rating;
 };
-},{"../mixins/classGenerator.js":37}],49:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],50:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -2176,7 +2201,7 @@ module.exports = function (React) {
 
   return Search;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/stateSelector.js":39}],50:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/stateSelector.js":40}],51:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -2224,7 +2249,7 @@ module.exports = function (React) {
 
   return Shape;
 };
-},{"../mixins/classGenerator.js":37}],51:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],52:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -2272,7 +2297,7 @@ module.exports = function (React) {
 
   return Sidebar;
 };
-},{"../mixins/classGenerator.js":37}],52:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],53:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -2320,7 +2345,7 @@ module.exports = function (React) {
 
   return Sticky;
 };
-},{"../mixins/classGenerator.js":37}],53:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],54:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -2379,7 +2404,7 @@ module.exports = function (React) {
 
   return Tab;
 };
-},{"../mixins/classGenerator.js":37,"../mixins/stateSelector.js":39}],54:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38,"../mixins/stateSelector.js":40}],55:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -2413,7 +2438,7 @@ module.exports = function (React) {
 
   return Ad;
 };
-},{"../mixins/classGenerator.js":37}],55:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],56:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -2447,7 +2472,7 @@ module.exports = function (React) {
 
   return Card;
 };
-},{"../mixins/classGenerator.js":37}],56:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],57:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -2481,7 +2506,7 @@ module.exports = function (React) {
 
   return Comment;
 };
-},{"../mixins/classGenerator.js":37}],57:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],58:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -2515,7 +2540,7 @@ module.exports = function (React) {
 
   return Comments;
 };
-},{"../mixins/classGenerator.js":37}],58:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],59:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -2549,7 +2574,7 @@ module.exports = function (React) {
 
   return Feed;
 };
-},{"../mixins/classGenerator.js":37}],59:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],60:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -2590,7 +2615,7 @@ module.exports = function (React) {
 
   return Item;
 };
-},{"../commons/unit.js":20,"../mixins/classGenerator.js":37,"../mixins/typeSelector.js":40}],60:[function(require,module,exports){
+},{"../commons/unit.js":21,"../mixins/classGenerator.js":38,"../mixins/typeSelector.js":41}],61:[function(require,module,exports){
 "use strict";
 module.exports = function (React) {
 
@@ -2627,7 +2652,7 @@ module.exports = function (React) {
 
   return Items;
 };
-},{"../mixins/classGenerator.js":37}],61:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],62:[function(require,module,exports){
 "use strict";
 
 var _objectWithoutProperties = function (obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; };
@@ -2661,7 +2686,7 @@ module.exports = function (React) {
 
   return Statistic;
 };
-},{"../mixins/classGenerator.js":37}],62:[function(require,module,exports){
+},{"../mixins/classGenerator.js":38}],63:[function(require,module,exports){
 /*!
   Copyright (c) 2015 Jed Watson.
   Licensed under the MIT License (MIT), see
@@ -2706,4 +2731,4 @@ if (typeof define !== 'undefined' && define.amd) {
 	});
 }
 
-},{}]},{},[3]);
+},{}]},{},[4]);
