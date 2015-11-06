@@ -1,7 +1,7 @@
 "use strict";
 
-window.Footer = React.createClass({
-  displayName: "AsLabs::Footer",
+window.AsLabs.AppFooter = React.createClass({
+  displayName: "AsLabs::AppFooter",
   render: function render() {
     return React.createElement(
       "footer",

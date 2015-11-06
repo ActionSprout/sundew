@@ -1,6 +1,6 @@
 'use strict';
 
-window.LoginButton = React.createClass({
+window.AsLabs.LoginButton = React.createClass({
   displayName: "AsLabs::LoginButton",
   getInitialState: function getInitialState() {
     return {
