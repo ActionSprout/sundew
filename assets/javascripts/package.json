@@ -8,8 +8,7 @@
     "react": "^0.14.2",
     "react-addons-css-transition-group": "^0.14.2",
     "react-dom": "^0.14.2",
-    "react-semantify": "^0.3.1",
-    "react-toolbox": "^0.11.2"
+    "react-semantify": "git+https://git@github.com/jessy1092/react-semantify.git"
   },
   "devDependencies": {
     "babel-cli": "^6.1.1",
