@@ -1,5 +1,5 @@
-window.Footer = React.createClass({
-  displayName: "AsLabs::Footer",
+window.AsLabs.AppFooter = React.createClass({
+  displayName: "AsLabs::AppFooter",
   render: function () {
     return <footer id="footer">
       <section className="container">

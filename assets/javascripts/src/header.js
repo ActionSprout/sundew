@@ -1,5 +1,5 @@
-window.Header = React.createClass({
-  displayName: "AsLabs::Header",
+window.AsLabs.AppHeader = React.createClass({
+  displayName: "AsLabs::AppHeader",
   logo: function () {
     return <img src={this.props.app_logo}/>
   },
