@@ -42,6 +42,11 @@ window.AsLabs.ShareButton = React.createClass({
       component.fbInitialized()
     }
   },
+  fbInitialized: function () {
+    var component = this;
+    // TODO: This is now duplicated, figure out how to put me in a Mixin.
+    FB.getLoginStatus(function() { component.setState({loading: false}) });
+  },
   _shareLink: function () {
     FB.ui({
       method: 'share',
