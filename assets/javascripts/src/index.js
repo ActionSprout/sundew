@@ -1,3 +1,4 @@
+var React = require('react');
 var components = require('react-semantify');
 
 import Footer from './footer.js'

@@ -14,6 +14,7 @@ var _login_button2 = _interopRequireDefault(_login_button);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var React = require('react');
 var components = require('react-semantify');
 
 components['Footer'] = _footer2.default;
