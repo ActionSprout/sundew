@@ -1,9 +1,11 @@
+var components = require('react-semantify');
+
 import Footer from './footer.js'
 import Header from './header.js'
 import LoginButton from './login_button.js'
 
-window.AsLabs = {
-  Header: Header,
-  Footer: Footer,
-  Login: LoginButton
-};
+components['Footer'] = Footer;
+components['Header'] = Header;
+components['LoginButton'] = LoginButton;
+
+window.AsLabs = components;

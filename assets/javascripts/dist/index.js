@@ -14,8 +14,10 @@ var _login_button2 = _interopRequireDefault(_login_button);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-window.AsLabs = {
-  Header: _header2.default,
-  Footer: _footer2.default,
-  Login: _login_button2.default
-};
+var components = require('react-semantify');
+
+components['Footer'] = _footer2.default;
+components['Header'] = _header2.default;
+components['LoginButton'] = _login_button2.default;
+
+window.AsLabs = components;
