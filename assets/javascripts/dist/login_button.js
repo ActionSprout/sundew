@@ -64,7 +64,7 @@ window.AsLabs.LoginButton = React.createClass({
   render: function render() {
     return React.createElement(
       Button,
-      { className: this.props.className, loading: this.state.loading },
+      { className: this.props.className, loading: this.state.loading, onClick: this.handleClick },
       React.createElement(Icon, { className: 'facebook' }),
       this.props.label
     );
