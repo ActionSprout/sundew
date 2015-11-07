@@ -57,14 +57,8 @@ window.AsLabs.LoginButton = React.createClass({
       component.fbInitialized()
     }
   },
-  buttonClassName: function () {
-    var str = "ui button facebook";
-    if(this.state.loading) str += ' loading';
-
-    return str
-  },
   render: function () {
-    return <Button className={this.props.className}>
+    return <Button className={this.props.className} loading={this.state.loading}>
       <Icon className="facebook"/>
 
       {this.props.label}
