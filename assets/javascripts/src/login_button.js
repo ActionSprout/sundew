@@ -1,3 +1,6 @@
+var Button = window.AsLabs.Button;
+var Icon = window.AsLabs.Icon;
+
 window.AsLabs.LoginButton = React.createClass({
   displayName: "AsLabs::LoginButton",
   getInitialState: function () {
@@ -9,14 +12,16 @@ window.AsLabs.LoginButton = React.createClass({
     return {
       label: 'Login with Facebook',
       scope: 'public_profile,email',
-      redirect_url: '/'
+      redirect_url: '/',
+      className: 'facebook massive'
     };
   },
   propTypes: {
     label: React.PropTypes.string,
     scope: React.PropTypes.string,
     onLogin: React.PropTypes.func,
-    redirect_url: React.PropTypes.string
+    redirect_url: React.PropTypes.string,
+    className: React.PropTypes.string
   },
 
   handleClick: function () {
@@ -59,10 +64,10 @@ window.AsLabs.LoginButton = React.createClass({
     return str
   },
   render: function () {
-    return <button className={this.buttonClassName()} onClick={this.handleClick}>
-        <i className="ui icon fa fa-facebook"></i>
+    return <Button className={this.props.className}>
+      <Icon className="facebook"/>
 
-        {this.props.label}
-    </button>
+      {this.props.label}
+    </Button>;
   }
 });
