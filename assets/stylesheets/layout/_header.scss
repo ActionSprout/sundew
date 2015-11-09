@@ -28,19 +28,24 @@ section#header{
   .ui.floated.left{
     min-width: 35%;
 
-    h1 a{
-      font-size: 2rem;
-      color: #fff;
-      font-weight: 700;
-      text-transform: uppercase;
+    h1 {
+      margin: 0.5rem 0;
 
-      img{
-        max-width: 20px;
-        margin-right: 0.25em;
-      }
+      a{
+        font-size: 2rem;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
 
-      span{
-        font-weight: 300;
+        img{
+          max-width: 30px;
+          margin-right: 0.25em;
+          margin-bottom: -0.3rem;
+        }
+
+        span{
+          font-weight: 300;
+        }
       }
     }
   }
