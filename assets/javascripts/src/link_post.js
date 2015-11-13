@@ -3,8 +3,8 @@ var Content = AsLabs.Content;
 var Text = AsLabs.Text;
 var Icon = AsLabs.Icon;
 var Divider = AsLabs.Divider;
-var PostHeader = require('./post_header');
-var PostEngagement = require('./post_engagement');
+var PostHeader = AsLabs.PostHeader;
+var PostEngagement = AsLabs.PostEngagement;
 
 window.AsLabs.LinkPost = React.createClass({
   propTypes: {

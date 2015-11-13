@@ -1,4 +1,4 @@
-window.AsLabs.FbEbeddedPost = React.createClass({
+module.exports = React.createClass({
   propTypes: {
     fbid: React.PropTypes.string.isRequired,
     width: React.PropTypes.number
