@@ -3,6 +3,7 @@ var Content = AsLabs.Content;
 var LinkPost = AsLabs.LinkPost;
 var PhotoPost = AsLabs.PhotoPost;
 var VideoPost = AsLabs.VideoPost;
+var Loader = AsLabs.Loader;
 
 module.exports = React.createClass({
   propTypes: {
@@ -33,7 +34,7 @@ module.exports = React.createClass({
     if (this.state.loading) {
       return <Card className={this.props.className}>
         <Content>
-          <Loader />
+          <Loader active={this.state.loading}/>
         </Content>
       </Card>
     }

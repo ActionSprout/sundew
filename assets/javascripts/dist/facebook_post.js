@@ -5,6 +5,7 @@ var Content = AsLabs.Content;
 var LinkPost = AsLabs.LinkPost;
 var PhotoPost = AsLabs.PhotoPost;
 var VideoPost = AsLabs.VideoPost;
+var Loader = AsLabs.Loader;
 
 module.exports = React.createClass({
   propTypes: {
@@ -39,7 +40,7 @@ module.exports = React.createClass({
         React.createElement(
           Content,
           null,
-          React.createElement(Loader, null)
+          React.createElement(Loader, { active: this.state.loading })
         )
       );
     }
