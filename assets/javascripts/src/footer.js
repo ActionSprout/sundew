@@ -1,4 +1,4 @@
-window.AsLabs.AppFooter = React.createClass({
+module.exports = React.createClass({
   displayName: "AsLabs::AppFooter",
   render: function () {
     return <footer id="footer">
