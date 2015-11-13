@@ -1,12 +1,10 @@
 'use strict';
 
-// TODO: Move To Sundew.
-
 var Card = AsLabs.Card;
 var Content = AsLabs.Content;
-var LinkPost = require('./facebook_post/link_post');
-var PhotoPost = require('./facebook_post/photo_post');
-var VideoPost = require('./facebook_post/video_post');
+var LinkPost = AsLabs.LinkPost;
+var PhotoPost = AsLabs.PhotoPost;
+var VideoPost = AsLabs.VideoPost;
 
 module.exports = React.createClass({
   propTypes: {
