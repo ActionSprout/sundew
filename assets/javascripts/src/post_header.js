@@ -4,7 +4,7 @@ var Card = AsLabs.Card;
 var Content = AsLabs.Content;
 var Text = AsLabs.Text;
 var Icon = AsLabs.Icon;
-var FBAvatar = require('../avatar');
+var Avatar = AsLabs.Avatar;
 
 var PostHeader = React.createClass({
   propTypes: {
@@ -14,7 +14,7 @@ var PostHeader = React.createClass({
     return <Content>
       <div className="right floated meta">14h</div>
 
-      <FBAvatar fbid={this.props.data.from.id} />
+      <Avatar fbid={this.props.data.from.id} />
       {this.props.data.from.name}
     </Content>
   }
