@@ -1,6 +1,6 @@
 var Image = AsLabs.Image;
 
-module.exports = React.createClass({
+window.AsLabs.Avatar = React.createClass({
   displayName: "AsLabs::FBAvatar",
   propTypes: {
     fbid: React.PropTypes.string.isRequired,

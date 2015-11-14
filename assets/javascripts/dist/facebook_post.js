@@ -7,7 +7,7 @@ var PhotoPost = AsLabs.PhotoPost;
 var VideoPost = AsLabs.VideoPost;
 var Loader = AsLabs.Loader;
 
-module.exports = React.createClass({
+window.AsLabs.FacebookPost = React.createClass({
   propTypes: {
     fbid: React.PropTypes.string.isRequired,
     className: React.PropTypes.string

@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = React.createClass({
+window.AsLabs.AppHeader = React.createClass({
   displayName: "AsLabs::AppHeader",
   logo: function logo() {
     return React.createElement("img", { src: this.props.app_logo });

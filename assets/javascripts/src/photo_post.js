@@ -5,7 +5,7 @@ var Icon = AsLabs.Icon;
 var PostHeader = AsLabs.PostHeader;
 var PostEngagement = AsLabs.PostEngagement;
 
-module.exports = React.createClass({
+window.AsLabs.PhotoPost = React.createClass({
   propTypes: {
     fbid: React.PropTypes.string.isRequired,
     className: React.PropTypes.string

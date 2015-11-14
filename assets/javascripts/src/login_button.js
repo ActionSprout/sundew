@@ -1,7 +1,7 @@
 var Button = window.AsLabs.Button;
 var Icon = window.AsLabs.Icon;
 
-module.exports = React.createClass({
+window.AsLabs.LoginButton = React.createClass({
   displayName: "AsLabs::LoginButton",
   getInitialState: function () {
     return {

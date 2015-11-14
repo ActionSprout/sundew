@@ -2,7 +2,7 @@ var Card = AsLabs.Card;
 var Content = AsLabs.Content;
 var Text = AsLabs.Text;
 
-module.exports = React.createClass({
+window.AsLabs.VideoPost = React.createClass({
   propTypes: {
     fbid: React.PropTypes.string.isRequired,
     className: React.PropTypes.string

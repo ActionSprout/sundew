@@ -3,7 +3,7 @@
 var Button = window.AsLabs.Button;
 var Icon = window.AsLabs.Icon;
 
-module.exports = React.createClass({
+window.AsLabs.ShareButton = React.createClass({
   displayName: "AsLabs::ShareButton",
   getInitialState: function getInitialState() {
     return {

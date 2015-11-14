@@ -1,4 +1,4 @@
-module.exports = React.createClass({
+window.AsLabs.AppHeader = React.createClass({
   displayName: "AsLabs::AppHeader",
   logo: function () {
     return <img src={this.props.app_logo}/>

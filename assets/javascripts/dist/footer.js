@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = React.createClass({
+window.AsLabs.AppFooter = React.createClass({
   displayName: "AsLabs::AppFooter",
   render: function render() {
     return React.createElement(

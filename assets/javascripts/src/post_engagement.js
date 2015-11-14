@@ -5,7 +5,7 @@ var Content = AsLabs.Content;
 var Text = AsLabs.Text;
 var Icon = AsLabs.Icon;
 
-module.exports = React.createClass({
+window.AsLabs.PostEngagement = React.createClass({
   propTypes: {
     data: React.PropTypes.object.isRequired
   },

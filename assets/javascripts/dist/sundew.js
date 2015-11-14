@@ -3,7 +3,7 @@
 
 var Image = AsLabs.Image;
 
-module.exports = React.createClass({
+window.AsLabs.Avatar = React.createClass({
   displayName: "AsLabs::FBAvatar",
   propTypes: {
     fbid: React.PropTypes.string.isRequired,
@@ -32,7 +32,7 @@ var PhotoPost = AsLabs.PhotoPost;
 var VideoPost = AsLabs.VideoPost;
 var Loader = AsLabs.Loader;
 
-module.exports = React.createClass({
+window.AsLabs.FacebookPost = React.createClass({
   propTypes: {
     fbid: React.PropTypes.string.isRequired,
     className: React.PropTypes.string
@@ -88,7 +88,7 @@ module.exports = React.createClass({
 },{}],3:[function(require,module,exports){
 "use strict";
 
-module.exports = React.createClass({
+window.AsLabs.AppFooter = React.createClass({
   displayName: "AsLabs::AppFooter",
   render: function render() {
     return React.createElement(
@@ -128,7 +128,7 @@ module.exports = React.createClass({
 },{}],4:[function(require,module,exports){
 "use strict";
 
-module.exports = React.createClass({
+window.AsLabs.AppHeader = React.createClass({
   displayName: "AsLabs::AppHeader",
   logo: function logo() {
     return React.createElement("img", { src: this.props.app_logo });
@@ -178,17 +178,17 @@ module.exports = React.createClass({
 
 window.AsLabs = require('react-semantify/lib/index_browser.js');
 window.AsLabs.ReactMarkdown = require('react-markdown');
-window.AsLabs.AppHeader = require('./header');
-window.AsLabs.AppFooter = require('./footer');
-window.AsLabs.Avatar = require('./avatar');
-window.AsLabs.ShareButton = require('./share_button');
-window.AsLabs.LoginButton = require('./login_button');
-AsLabs.PostHeader = require('./post_header');
-AsLabs.PostEngagement = require('./post_engagement');
-window.AsLabs.LinkPost = require('./link_post');
-window.AsLabs.PhotoPost = require('./photo_post');
-window.AsLabs.VideoPost = require('./video_post');
-window.AsLabs.FacebookPost = require('./facebook_post');
+require('./header');
+require('./footer');
+require('./avatar');
+require('./share_button');
+require('./login_button');
+require('./post_header');
+require('./post_engagement');
+require('./link_post');
+require('./photo_post');
+require('./video_post');
+require('./facebook_post');
 
 },{"./avatar":1,"./facebook_post":2,"./footer":3,"./header":4,"./link_post":6,"./login_button":7,"./photo_post":8,"./post_engagement":9,"./post_header":10,"./share_button":11,"./video_post":12,"react-markdown":27,"react-semantify/lib/index_browser.js":58}],6:[function(require,module,exports){
 'use strict';
@@ -262,7 +262,7 @@ window.AsLabs.LinkPost = React.createClass({
 var Button = window.AsLabs.Button;
 var Icon = window.AsLabs.Icon;
 
-module.exports = React.createClass({
+window.AsLabs.LoginButton = React.createClass({
   displayName: "AsLabs::LoginButton",
   getInitialState: function getInitialState() {
     return {
@@ -340,7 +340,7 @@ var Icon = AsLabs.Icon;
 var PostHeader = AsLabs.PostHeader;
 var PostEngagement = AsLabs.PostEngagement;
 
-module.exports = React.createClass({
+window.AsLabs.PhotoPost = React.createClass({
   propTypes: {
     fbid: React.PropTypes.string.isRequired,
     className: React.PropTypes.string
@@ -395,7 +395,7 @@ var Content = AsLabs.Content;
 var Text = AsLabs.Text;
 var Icon = AsLabs.Icon;
 
-module.exports = React.createClass({
+window.AsLabs.PostEngagement = React.createClass({
   propTypes: {
     data: React.PropTypes.object.isRequired
   },
@@ -446,7 +446,7 @@ var Text = AsLabs.Text;
 var Icon = AsLabs.Icon;
 var Avatar = AsLabs.Avatar;
 
-var PostHeader = React.createClass({
+window.AsLabs.PostHeader = React.createClass({
   propTypes: {
     data: React.PropTypes.object.isRequired
   },
@@ -471,7 +471,7 @@ var PostHeader = React.createClass({
 var Button = window.AsLabs.Button;
 var Icon = window.AsLabs.Icon;
 
-module.exports = React.createClass({
+window.AsLabs.ShareButton = React.createClass({
   displayName: "AsLabs::ShareButton",
   getInitialState: function getInitialState() {
     return {
@@ -542,7 +542,7 @@ var Card = AsLabs.Card;
 var Content = AsLabs.Content;
 var Text = AsLabs.Text;
 
-module.exports = React.createClass({
+window.AsLabs.VideoPost = React.createClass({
   propTypes: {
     fbid: React.PropTypes.string.isRequired,
     className: React.PropTypes.string

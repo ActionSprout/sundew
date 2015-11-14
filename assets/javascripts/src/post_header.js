@@ -6,7 +6,7 @@ var Text = AsLabs.Text;
 var Icon = AsLabs.Icon;
 var Avatar = AsLabs.Avatar;
 
-var PostHeader = React.createClass({
+window.AsLabs.PostHeader = React.createClass({
   propTypes: {
     data: React.PropTypes.object.isRequired
   },
