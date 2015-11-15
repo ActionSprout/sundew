@@ -1,30 +1,33 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
   require('grunt-browserify')(grunt);
+  require('reactify')
   // Project configuration.
   grunt.initConfig({
-    babel: {
-      dist: {
-        files: [{
-          "expand": true,
-          "cwd": "src/",
-          "src": ["**/*.js"],
-          "dest": "dist/",
-          "ext": ".js"
-        }]
-      },
-      options: {
-        presets: ['es2015', 'react']
-      }
-    },
     browserify: {
       dist: {
+        options: {
+          transform: ["reactify"]
+        },
         files: {
-          'dist/sundew.js': ['dist/index.js']
+          'dist/sundew.js': [
+            'src/index.js',
+            'src/header.js',
+            'src/footer.js',
+            'src/avatar.js',
+            'src/share_button.js',
+            'src/login_button.js',
+            'src/post_header.js',
+            'src/post_engagement.js',
+            'src/link_post.js',
+            'src/photo_post.js',
+            'src/video_post.js',
+            'src/facebook_post.js'
+          ]
         }
       }
     }
   });
 
-  grunt.registerTask('default', ['babel', 'browserify']);
+  grunt.registerTask('default', ['browserify']);
 };
