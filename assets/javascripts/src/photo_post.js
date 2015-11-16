@@ -17,7 +17,9 @@ window.AsLabs.PhotoPost = React.createClass({
     }
   },
   attachment: function () {
-    return this.props.data.attachments.data[0]
+    // TODO: Handle albums/multiple pictures more gracefully.
+    var post = this.props.data;
+    return (post.attachments || post.subattachements).data[0]
   },
   image: function () {
     var attached = this.attachment();
