@@ -22,18 +22,18 @@ window.AsLabs.LinkPost = React.createClass({
   },
   image: function () {
     var attached = this.attachment();
-    return attached.media.image
+    if(attached.media) return attached.media.image;
   },
   render: function () {
     var post = this.props.data;
-    var image = this.image();
+    var img = this.image();
     var attachment = this.attachment();
 
     return <Card className={this.props.className}>
       <PostHeader data={post} />
 
       <Content>
-        <Image src={image.src} className='fluid'/>
+        {img ? <Image src={img.src} className='fluid'/> : ''}
         <Divider />
         <Text>
           <a href={attachment.url} target="_blank">

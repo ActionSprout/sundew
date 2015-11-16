@@ -26809,18 +26809,18 @@ window.AsLabs.LinkPost = React.createClass({displayName: "LinkPost",
   },
   image: function () {
     var attached = this.attachment();
-    return attached.media.image
+    if(attached.media) return attached.media.image;
   },
   render: function () {
     var post = this.props.data;
-    var image = this.image();
+    var img = this.image();
     var attachment = this.attachment();
 
     return React.createElement(Card, {className: this.props.className}, 
       React.createElement(PostHeader, {data: post}), 
 
       React.createElement(Content, null, 
-        React.createElement(Image, {src: image.src, className: "fluid"}), 
+        img ? React.createElement(Image, {src: img.src, className: "fluid"}) : '', 
         React.createElement(Divider, null), 
         React.createElement(Text, null, 
           React.createElement("a", {href: attachment.url, target: "_blank"}, 
