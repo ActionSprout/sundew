@@ -40,16 +40,21 @@ window.AsLabs.FacebookPost = React.createClass({
     }
 
     var post = this.state.postData;
+    var componentKlass;
 
     if (post.type.match(/link/)) {
       // Share post
-      return <LinkPost data={post} className={this.props.className} />
+      componentKlass = LinkPost
     } else if (post.type.match(/photo/)) {
       // Photo post
-      return <PhotoPost data={post} className={this.props.className} />
+      componentKlass = PhotoPost
     } else if (post.type.match(/video/)) {
       // Video post
-      return <VideoPost data={post} className={this.props.className} />
+      componentKlass = VideoPost
     }
+
+    return <componentKlass data={post} className={this.props.className}>
+      {this.props.children}
+    </componentKlass>
   }
 });

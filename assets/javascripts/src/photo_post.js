@@ -49,6 +49,8 @@ window.AsLabs.PhotoPost = React.createClass({
 
       <PostEngagement data={post}/>
 
+      {this.props.children}
+
     </Card>
   }
 });

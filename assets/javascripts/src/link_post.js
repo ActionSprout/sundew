@@ -49,6 +49,8 @@ window.AsLabs.LinkPost = React.createClass({
       </Content>
 
       <PostEngagement data={post}/>
+
+      {this.props.children}
     </Card>
   }
 });

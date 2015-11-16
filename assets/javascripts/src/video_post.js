@@ -20,6 +20,8 @@ window.AsLabs.VideoPost = React.createClass({
         Video Card
         </Text>
       </Content>
+
+      {this.props.children}
     </Card>
   }
 });

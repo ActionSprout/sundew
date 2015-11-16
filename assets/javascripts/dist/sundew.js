@@ -26717,17 +26717,22 @@ window.AsLabs.FacebookPost = React.createClass({displayName: "FacebookPost",
     }
 
     var post = this.state.postData;
+    var componentKlass
 
     if (post.type.match(/link/)) {
       // Share post
-      return React.createElement(LinkPost, {data: post, className: this.props.className})
+      componentKlass = LinkPost
     } else if (post.type.match(/photo/)) {
       // Photo post
-      return React.createElement(PhotoPost, {data: post, className: this.props.className})
+      componentKlass = PhotoPost
     } else if (post.type.match(/video/)) {
       // Video post
-      return React.createElement(VideoPost, {data: post, className: this.props.className})
+      componentKlass = VideoPost
     }
+
+    return React.createElement("componentKlass", {data: post, className: this.props.className}, 
+      this.props.children
+    )
   }
 });
 
@@ -26835,7 +26840,9 @@ window.AsLabs.LinkPost = React.createClass({displayName: "LinkPost",
         )
       ), 
 
-      React.createElement(PostEngagement, {data: post})
+      React.createElement(PostEngagement, {data: post}), 
+
+      this.props.children
     )
   }
 });
@@ -26959,7 +26966,9 @@ window.AsLabs.PhotoPost = React.createClass({displayName: "PhotoPost",
         React.createElement(Text, null, post.message)
       ), 
 
-      React.createElement(PostEngagement, {data: post})
+      React.createElement(PostEngagement, {data: post}), 
+
+      this.props.children
 
     )
   }
@@ -27122,7 +27131,9 @@ window.AsLabs.VideoPost = React.createClass({displayName: "VideoPost",
         React.createElement(Text, null, 
         "Video Card"
         )
-      )
+      ), 
+
+      this.props.children
     )
   }
 });
