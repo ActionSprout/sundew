@@ -26697,7 +26697,7 @@ window.AsLabs.FacebookPost = React.createClass({displayName: "FacebookPost",
       loading: true
     }
   },
-  componentDidMount: function () {
+  fetchPosts: function () {
     var component = this;
 
     FB.api(this.props.fbid, {fields: 'from,message,created_time,attachments,type,comments.limit(0).summary(true),likes.limit(0).summary(true),shares'}, function (response) {
@@ -26706,6 +26706,13 @@ window.AsLabs.FacebookPost = React.createClass({displayName: "FacebookPost",
         postData: response
       })
     })
+  },
+  componentDidMount: function () {
+    if(typeof(FB) == 'undefined') {
+      $('#fb-root').on('ready', this.fetchPosts)
+    } else {
+      this.fetchPosts()
+    }
   },
   render: function () {
     if (this.state.loading) {
