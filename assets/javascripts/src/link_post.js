@@ -8,7 +8,7 @@ var PostEngagement = AsLabs.PostEngagement;
 
 window.AsLabs.LinkPost = React.createClass({
   propTypes: {
-    fbid: React.PropTypes.string.isRequired,
+    data: React.PropTypes.object.isRequired,
     className: React.PropTypes.string
   },
   getDefaultProps: function () {

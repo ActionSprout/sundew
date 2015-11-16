@@ -26795,7 +26795,7 @@ var PostEngagement = AsLabs.PostEngagement;
 
 window.AsLabs.LinkPost = React.createClass({displayName: "LinkPost",
   propTypes: {
-    fbid: React.PropTypes.string.isRequired,
+    data: React.PropTypes.object.isRequired,
     className: React.PropTypes.string
   },
   getDefaultProps: function () {
@@ -26918,7 +26918,7 @@ var PostEngagement = AsLabs.PostEngagement;
 
 window.AsLabs.PhotoPost = React.createClass({displayName: "PhotoPost",
   propTypes: {
-    fbid: React.PropTypes.string.isRequired,
+    data: React.PropTypes.object.isRequired,
     className: React.PropTypes.string
   },
   getDefaultProps: function () {
@@ -27093,7 +27093,7 @@ var Text = AsLabs.Text;
 
 window.AsLabs.VideoPost = React.createClass({displayName: "VideoPost",
   propTypes: {
-    fbid: React.PropTypes.string.isRequired,
+    data: React.PropTypes.object.isRequired,
     className: React.PropTypes.string
   },
   getDefaultProps: function () {

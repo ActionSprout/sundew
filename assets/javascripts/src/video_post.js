@@ -4,7 +4,7 @@ var Text = AsLabs.Text;
 
 window.AsLabs.VideoPost = React.createClass({
   propTypes: {
-    fbid: React.PropTypes.string.isRequired,
+    data: React.PropTypes.object.isRequired,
     className: React.PropTypes.string
   },
   getDefaultProps: function () {
