@@ -5,6 +5,7 @@ var Icon = AsLabs.Icon;
 var Divider = AsLabs.Divider;
 var PostHeader = AsLabs.PostHeader;
 var PostEngagement = AsLabs.PostEngagement;
+var Image = AsLabs.Image;
 
 window.AsLabs.LinkPost = React.createClass({
   propTypes: {

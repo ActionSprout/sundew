@@ -4,6 +4,7 @@ var Text = AsLabs.Text;
 var Icon = AsLabs.Icon;
 var PostHeader = AsLabs.PostHeader;
 var PostEngagement = AsLabs.PostEngagement;
+var Image = AsLabs.Image;
 
 window.AsLabs.PhotoPost = React.createClass({
   propTypes: {

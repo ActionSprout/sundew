@@ -1,6 +1,7 @@
 var Card = AsLabs.Card;
 var Content = AsLabs.Content;
 var Text = AsLabs.Text;
+var Image = AsLabs.Image;
 
 window.AsLabs.VideoPost = React.createClass({
   propTypes: {

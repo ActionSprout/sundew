@@ -26792,6 +26792,7 @@ var Icon = AsLabs.Icon;
 var Divider = AsLabs.Divider;
 var PostHeader = AsLabs.PostHeader;
 var PostEngagement = AsLabs.PostEngagement;
+var Image = AsLabs.Image;
 
 window.AsLabs.LinkPost = React.createClass({displayName: "LinkPost",
   propTypes: {
@@ -26915,6 +26916,7 @@ var Text = AsLabs.Text;
 var Icon = AsLabs.Icon;
 var PostHeader = AsLabs.PostHeader;
 var PostEngagement = AsLabs.PostEngagement;
+var Image = AsLabs.Image;
 
 window.AsLabs.PhotoPost = React.createClass({displayName: "PhotoPost",
   propTypes: {
@@ -27090,6 +27092,7 @@ window.AsLabs.ShareButton = React.createClass({
 var Card = AsLabs.Card;
 var Content = AsLabs.Content;
 var Text = AsLabs.Text;
+var Image = AsLabs.Image;
 
 window.AsLabs.VideoPost = React.createClass({displayName: "VideoPost",
   propTypes: {
