@@ -22,8 +22,9 @@ window.AsLabs.PhotoPost = React.createClass({
   },
   image: function () {
     var attached = this.attachment();
-    if(attached.media) return attached.media.image;
-    if(attached.subattachements) {
+    if(attached.media) {
+      return attached.media.image;
+    } else if(attached.subattachements) {
       // TODO: Handle albums/multiple pictures more gracefully.
       var subattachment = attached.subattachments.data[0];
       return subattachment.media;
