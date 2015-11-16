@@ -11,10 +11,14 @@ window.AsLabs.PostEngagement = React.createClass({
   },
   engagement: function () {
     var post = this.props.data;
+    var likeCount = post.likes.summary.total_count;
+    var commentCount = post.comments.summary.total_count;
+    var shareCount = post.shares ? post.shares.count : 0;
+
     return {
-      likes: post.likes.summary.total_count,
-      comments: post.comments.summary.total_count,
-      shares: post.shares.count
+      likes: likeCount,
+      comments: commentCount,
+      shares: shareCount
     }
   },
   render: function () {
