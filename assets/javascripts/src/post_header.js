@@ -10,12 +10,21 @@ window.AsLabs.PostHeader = React.createClass({
   propTypes: {
     data: React.PropTypes.object.isRequired
   },
+  timeAgo: function () {
+    var post = this.props.data;
+    var timestamp = post.created_time;
+
+    return moment(timestamp).fromNow();
+  },
   render: function () {
     return <Content>
-      <div className="right floated meta">14h</div>
+      <div className="right floated meta">
+        {this.timeAgo()}
+      </div>
 
       <Avatar fbid={this.props.data.from.id} />
-      {this.props.data.from.name}
+
+    {this.props.data.from.name}
     </Content>
   }
 });
