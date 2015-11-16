@@ -26717,22 +26717,23 @@ window.AsLabs.FacebookPost = React.createClass({displayName: "FacebookPost",
     }
 
     var post = this.state.postData;
-    var componentKlass
 
     if (post.type.match(/link/)) {
       // Share post
-      componentKlass = LinkPost
+      return React.createElement(LinkPost, {data: post, className: this.props.className}, 
+        this.props.children
+      )
     } else if (post.type.match(/photo/)) {
       // Photo post
-      componentKlass = PhotoPost
+      return React.createElement(PhotoPost, {data: post, className: this.props.className}, 
+        this.props.children
+      )
     } else if (post.type.match(/video/)) {
       // Video post
-      componentKlass = VideoPost
+      return React.createElement(VideoPost, {data: post, className: this.props.className}, 
+        this.props.children
+      )
     }
-
-    return React.createElement("componentKlass", {data: post, className: this.props.className}, 
-      this.props.children
-    )
   }
 });
 
