@@ -26930,7 +26930,8 @@ window.AsLabs.PhotoPost = React.createClass({displayName: "PhotoPost",
   },
   attachment: function () {
     var post = this.props.data;
-    return post.attachments;
+    // TODO: Handle albums/multiple pictures more gracefully.
+    return post.attachments.data[0];
   },
   image: function () {
     var attached = this.attachment();
